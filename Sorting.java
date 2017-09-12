@@ -43,7 +43,7 @@ public class Sorting {
     
     public static ArrayList inputIntegerList(){
         
-        ArrayList listOfNumbers = new ArrayList();
+        ArrayList listOfNumbers = new ArrayList <Integer>();
         int numOfItems = 0;
         System.out.print("Enter the number of integers to be sorted: ");
         numOfItems = readInteger();    
@@ -77,7 +77,7 @@ public class Sorting {
         
         // sorting using bubble sort
         BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.sortAscNumberList(integerList);
+        bubbleSort.sortAsc(integerList);
         
         // print the sorted list
         printIntegerList(integerList);
