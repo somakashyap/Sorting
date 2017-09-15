@@ -14,10 +14,10 @@ import java.util.*;
 public class InsertionSort implements SortingAlgorithm{
     
     // implement the ascending order sorting method
-    public void sortAsc (ArrayList<Integer> numberList){
+    public void sortAsc (ArrayList<Integer> numberList) throws NullPointerException{
         
         if (numberList == null || numberList.isEmpty()){
-            return;
+            throw new NullPointerException("Array list is null or empty");
         }
         // first element already dorted so we start from 1
         for (int sortingIndex = 1; sortingIndex < numberList.size(); sortingIndex++){

@@ -13,7 +13,7 @@ import java.util.*;
 public interface SortingAlgorithm {
     
        
-    public void sortAsc (ArrayList<Integer> numberList);
+    public void sortAsc (ArrayList<Integer> numberList) throws NullPointerException;
    
 }
 

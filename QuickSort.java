@@ -14,9 +14,9 @@ import java.util.*;
 public class QuickSort implements SortingAlgorithm{
     
     // implement the ascending order sorting method
-    public void sortAsc (ArrayList<Integer> numberList){
+    public void sortAsc (ArrayList<Integer> numberList) throws NullPointerException{
         if (numberList == null || numberList.isEmpty()){
-            return;
+            throw new NullPointerException("Array list is null or empty");
         }
         int n = numberList.size();
         quickSort (numberList, 0, n -1);  
