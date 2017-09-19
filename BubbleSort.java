@@ -11,11 +11,14 @@ package sorting;
  */
 
 import java.util.*;
-public class BubbleSort implements SortingAlgorithms{
+public class BubbleSort implements SortingAlgorithm{
     
     // implement the ascending order sorting method
-    public void sortAscNumberList (ArrayList numberList){
+    public void sortAsc (ArrayList<Integer> numberList) throws NullPointerException{
     
+        if (numberList == null || numberList.isEmpty()){
+            throw new NullPointerException("Array list is null or empty");
+        }
         int n = numberList.size();
         boolean swapped;
         do {
