@@ -10,9 +10,10 @@ import java.util.*;
  *
  * @author somak
  */
-public interface SortingAlgorithms {
+public interface SortingAlgorithm {
     
        
-    public void sortAscNumberList (ArrayList numberList);
+    public void sortAsc (ArrayList<Integer> numberList) throws NullPointerException;
    
 }
+
