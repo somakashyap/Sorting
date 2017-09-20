@@ -13,24 +13,25 @@ import java.util.*;
  */
 public class InsertionSort implements SortingAlgorithm{
     
-    // implement the ascending order sorting method
-    public void sortAsc (ArrayList<Integer> numberList) throws NullPointerException{
+    @Override
+    public void sort (ArrayList objectList, Comparator c) throws NullPointerException{
         
-        if (numberList == null || numberList.isEmpty()){
-            throw new NullPointerException("Array list is null or empty");
+        if (objectList == null || objectList.isEmpty()){
+            throw new NullPointerException("Object list is null or empty");
         }
-        // first element already dorted so we start from 1
-        for (int sortingIndex = 1; sortingIndex < numberList.size(); sortingIndex++){
-            int elementTobeInserted = numberList.get(sortingIndex);
+        // first element already sorted so we start from 1
+        for (int sortingIndex = 1; sortingIndex < objectList.size(); sortingIndex++){
+            Object elementTobeInserted = objectList.get(sortingIndex);
             int i = sortingIndex - 1;
 
-            while ( i >= 0 && numberList.get(i) > elementTobeInserted){
+            while ( i >= 0 && c.compare(objectList.get(i), elementTobeInserted ) > 0){
                 //shift the element to make space
-                numberList.set(i+1, numberList.get(i));
+                objectList.set(i+1, objectList.get(i));
                 i = i - 1;
             }
-            numberList.set(i+1, elementTobeInserted);   
+            objectList.set(i+1, elementTobeInserted);   
         }
     }
-    
 }
+        
+   

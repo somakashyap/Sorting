@@ -11,27 +11,30 @@ package sorting;
  */
 
 import java.util.*;
-public class BubbleSort implements SortingAlgorithm{
+public class BubbleSort implements SortingAlgorithm {
     
-    // implement the ascending order sorting method
-    public void sortAsc (ArrayList<Integer> numberList) throws NullPointerException{
-    
-        if (numberList == null || numberList.isEmpty()){
-            throw new NullPointerException("Array list is null or empty");
+    @Override
+    public void sort (ArrayList objectList, Comparator c) throws NullPointerException
+    {
+        if (objectList == null || objectList.isEmpty()){
+            throw new NullPointerException("Object list is null or empty");
         }
-        int n = numberList.size();
+        int n = objectList.size();
         boolean swapped;
         do {
             swapped = false;
-            for (int i = 0 ; i < n -1 ; i++){
-                if ((int)numberList.get(i) > (int)numberList.get (i+1)){
-                    int temp = (int) numberList.get(i);
-                    numberList.set(i, numberList.get(i+1));
-                    numberList.set(i+1, temp);
+            for(int i = 0; i < n-1; i++){
+                if (c.compare(objectList.get(i), objectList.get(i+1)) > 0){
+                    Object temp = objectList.get(i);
+                    objectList.set(i, objectList.get(i+1));
+                    objectList.set(i+1, temp);
                     swapped = true;
                 }
             }
+                
         }while (swapped);
+        
     }
+   
     
 }
